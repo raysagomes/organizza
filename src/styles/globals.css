@@ -331,7 +331,15 @@ margin-left: 5px;
 }
 
 .Grafico{ 
-  margin-top: 50px;
+  margin-top: 80px;
   width: 1000px;
   align-self: center;
+  margin-bottom: 80px;
+}
+
+.p-tabela{
+  margin-top: 20px;
+font-size: large;
+color:white;
+
 }

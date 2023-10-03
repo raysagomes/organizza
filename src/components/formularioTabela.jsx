@@ -10,18 +10,17 @@ function FormularioAdd() {
     const [data, setData] = useState("");
     const [mensagem, setMensagem] = useState("");
     const [user, setUser] = useState(null);
-    const [detalhes, setDetalhes] = useState([]);
+    const [dados, setDados] = useState([]);
     const [categorias, setCategorias] = useState([]);
     const [valorTotalRendimentos, setValorTotalRendimentos] = useState(0);
     const [valorTotalDespesas, setValorTotalDespesas] = useState(0);
 
-    const calcularValoresTotais = (detalhes) => {
-        // Calcular o valor total dos rendimentos e despesas
-        const totalRendimentos = detalhes
+    const calcularValoresTotais = (dados) => {
+        const totalRendimentos = dados
             .filter((item) => item.tipo === "income")
             .reduce((total, item) => total + item.valor, 0);
 
-        const totalDespesas = detalhes
+        const totalDespesas = dados
             .filter((item) => item.tipo === "expense")
             .reduce((total, item) => total + item.valor, 0);
 
@@ -43,18 +42,18 @@ function FormularioAdd() {
         if (user) {
             const db = getDatabase();
             const userId = user.uid;
-            const categoriasRef = ref(db, `users/${userId}/categorias`);
-            const detalhesRef = ref(db, `users/${userId}/categorias/${categoria}/detalhes`);
+            const dadosRef = ref(db, `users/${userId}/categorias/${categoria}/detalhes`);
 
-            onValue(detalhesRef, (snapshot) => {
+            onValue(dadosRef, (snapshot) => {
                 const data = snapshot.val();
                 if (data) {
-                    const detalhesArray = Object.values(data);
-                    setDetalhes(detalhesArray);
-                    calcularValoresTotais(detalhesArray);
+                    const dadosArray = Object.values(data);
+                    setDados(dadosArray);
+                    calcularValoresTotais(dadosArray);
                 }
             });
 
+            const categoriasRef = ref(db, `users/${userId}/categorias`);
             onValue(categoriasRef, (snapshot) => {
                 const data = snapshot.val();
                 if (data) {
@@ -85,10 +84,10 @@ function FormularioAdd() {
 
         const db = getDatabase();
         const userId = user.uid;
-        const detalhesRef = ref(db, `users/${userId}/categorias/${categoria}/detalhes`);
+        const dadosRef = ref(db, `users/${userId}/categorias/${categoria}/detalhes`);
 
         try {
-            await runTransaction(detalhesRef, (currentData) => {
+            await runTransaction(dadosRef, (currentData) => {
                 const detalhes = currentData || [];
                 detalhes.push({
                     tipo: tipo,
@@ -96,7 +95,7 @@ function FormularioAdd() {
                     valor: parseFloat(valor),
                     data: data,
                 });
-                set(detalhesRef, detalhes);
+                set(dadosRef, detalhes);
                 calcularValoresTotais(detalhes);
                 return detalhes;
             });
@@ -178,24 +177,25 @@ function FormularioAdd() {
                         </tr>
                     </thead>
                     <tbody>
-                        {detalhes.map((item, index) => (
-                            <tr key={index}>
-                                <td>{item.tipo === 'expense' ? 'Despesa' : 'Rendimento'}</td>
-                                <td>{item.categoria}</td>
-                                <td>{item.valor}</td>
-                                <td>{item.data}</td>
-                            </tr>
-                        ))}
+                        {dados
+                            .filter((item) => item.tipo === tipo || tipo === "")
+                            .map((item, index) => (
+                                <tr key={index}>
+                                    <td>{item.tipo === 'expense' ? 'Despesa' : 'Rendimento'}</td>
+                                    <td>{item.categoria}</td>
+                                    <td>{item.valor}</td>
+                                    <td>{item.data}</td>
+                                </tr>
+                            ))}
                     </tbody>
                 </table>
                 <div className="total-container">
-                    <p>Total Despesas: {valorTotalDespesas}</p>
-                    <p>Total Rendimentos: {valorTotalRendimentos}</p>
+                    <p className="p-tabela">Total Despesas: {valorTotalDespesas}</p>
+                    <p className="p-tabela">Total Rendimentos: {valorTotalRendimentos}</p>
                 </div>
             </div>
             <div className="Grafico">
                 <Grafico
-                    detalhes={detalhes}
                     valorTotalDespesas={valorTotalDespesas}
                     valorTotalRendimentos={valorTotalRendimentos}
                 />

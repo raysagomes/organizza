@@ -8,6 +8,7 @@ import Footer from '../components/footer'
 import Carteira from './carteira';
 import { useEffect, useState } from 'react';
 import { auth } from './Firebase';
+import { IncomeExpenseProvider } from "../components/IncomeExpenseContext"; // Importe o seu provedor de contexto
 
 
 
@@ -15,7 +16,7 @@ function Principal() {
   return (
     <>
     <Header />
-    <Container1 />
+      <Container1 />
     <H1 />
     <Lista />
     <Footer />

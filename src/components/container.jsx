@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
 import React from 'react';
+import { useIncomeExpense } from './IncomeExpenseContext';
 
 
 function Container1() {
