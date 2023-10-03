@@ -14,6 +14,7 @@ function FormularioAdd() {
     const [categorias, setCategorias] = useState([]);
     const [valorTotalRendimentos, setValorTotalRendimentos] = useState(0);
     const [valorTotalDespesas, setValorTotalDespesas] = useState(0);
+    const [valorTotal, setValorTotal] = useState(0);
 
     const calcularValoresTotais = (dados) => {
         const totalRendimentos = dados
@@ -26,6 +27,7 @@ function FormularioAdd() {
 
         setValorTotalRendimentos(totalRendimentos);
         setValorTotalDespesas(totalDespesas);
+        setValorTotal(totalRendimentos-totalDespesas)
     };
 
     useEffect(() => {
@@ -192,12 +194,14 @@ function FormularioAdd() {
                 <div className="total-container">
                     <p className="p-tabela">Total Despesas: {valorTotalDespesas}</p>
                     <p className="p-tabela">Total Rendimentos: {valorTotalRendimentos}</p>
+                    <p className="p-tabela">Total: {valorTotal}</p>
                 </div>
             </div>
             <div className="Grafico">
                 <Grafico
                     valorTotalDespesas={valorTotalDespesas}
                     valorTotalRendimentos={valorTotalRendimentos}
+                    valorTotal={valorTotal}
                 />
             </div>
         </center>

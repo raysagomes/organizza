@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
 
-function Grafico({ valorTotalDespesas, valorTotalRendimentos }) {
+function Grafico({ valorTotalDespesas, valorTotalRendimentos, valorTotal }) {
   const canvasRef = useRef(null);
   const chartRef = useRef(null);
-
+  
   useEffect(() => {
     const ctx = canvasRef.current.getContext("2d");
 
@@ -15,12 +15,12 @@ function Grafico({ valorTotalDespesas, valorTotalRendimentos }) {
 
     // Configurar dados para o gráfico
     const data = {
-      labels: ["Despesas", "Rendimentos"],
+      labels: ["Despesas", "Rendimentos", "Totais"],
       datasets: [
         {
           label: "Valores",
-          data: [valorTotalDespesas, valorTotalRendimentos],
-          backgroundColor: ["rgba(255, 99, 132, 0.6)", "rgba(75, 192, 192, 0.6)"],
+          data: [valorTotalDespesas, valorTotalRendimentos, valorTotal],
+          backgroundColor: ["#FF1717", "#46FF17",  "#FFE817"],
         },
       ],
     };
@@ -30,7 +30,7 @@ function Grafico({ valorTotalDespesas, valorTotalRendimentos }) {
       type: "bar",
       data: data,
     });
-  }, [valorTotalDespesas, valorTotalRendimentos]);
+  }, [valorTotalDespesas, valorTotalRendimentos, valorTotal]);
 
   return <canvas ref={canvasRef} />;
 }
