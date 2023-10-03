@@ -1,0 +1,337 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.header1{
+  background-color:  #19375D;
+}
+
+.botoes {
+  margin-top: 20px;
+  background-color: aqua;
+  margin-right: 10px;
+  width: fit-content;
+  height: 40px;
+}
+
+
+#dropdown1 {
+background-color: white; 
+}
+
+#organiza {
+  color: white;
+}
+
+.container-main {
+  margin-top: 30px;
+  background-color: #19375D;
+  border-radius:40px;
+  width: 100%;
+
+}
+
+#celular{
+margin: 30px;
+height: 300px;
+margin-left: 80px;
+width:300px;
+}
+
+.card1 {
+  padding-top: 10px;
+width: 50%;  
+}
+.card-saldo {
+  width: 80%;
+  background-color: #6CB2C1;
+  border-radius: 30px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-bottom: 40px;
+  margin-top: 10px;
+  color: black;
+  font-weight: 700;
+}
+
+.lista {
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  display: flex; 
+  height: 150px;
+}
+
+
+.Lista-itens{
+ margin-right: 40px;
+ margin-bottom: 30px;
+ border-radius: 20px;
+ box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+ width: 411px;
+ height: 87px; 
+ 
+font-size: larger;
+}
+
+.div-card{
+  margin-top: 130px;
+}
+
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.centered-container h1 {
+  font-size: 2rem; 
+}
+.footer {
+  background-color:#19375D;
+  width: 100%;
+  color: white;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.nav-link1{ 
+text-decoration: none;
+color:white;
+
+}
+.custom-footer-link {
+  text-decoration: none !important;
+  color: white !important;
+  padding: 40px;
+}
+
+.Lista-itens-link{ 
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.coluna-login{ 
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  margin-left: 80px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+height: 500px;
+justify-items: center;
+
+}
+.coluna-login1{ 
+height: 200px;
+margin-top: 200px;
+padding: 80px;
+background-color: #6CB2C1;
+border-radius: 40px;
+align-items: center;
+font-family: Poppins;
+color: white;
+font-weight: 900;
+font-size: 30px;
+margin-left: 20px;
+}
+
+.coluna-login2{ 
+  padding: 80px;
+  height: 250px;
+  background-color:white;
+  margin-top: 50px;
+  font-family: Poppins;
+  font-weight: 900;
+  width: 416px;
+  font-size: 20px;
+  height: 148px;
+  color: #848C8E;
+  margin-left: 40px;
+  }
+
+.div-login{
+  margin-top: 100px;
+  width: 800px;
+  border-radius: 40px;
+}
+.div-login-2{
+  margin-top: 100px;
+  width: 800px;
+  border-radius: 40px;
+}
+
+.inputLogin{ 
+  height: 40px;
+  width: 500px;
+}
+
+.inputPass{
+  height: 40px;
+  width: 500px;
+}
+
+.divPai {
+  width: 500px;
+}
+
+.button-login {
+background-color:#6CB2C1 ;
+color: white;
+margin-top:20px ;
+justify-self: end;
+}
+
+.button-login2{
+  background-color:#6CB2C1 ;
+color: white;
+margin-top:100px ;
+justify-self: end;
+}
+
+.coluna-login-r1{
+  height: 200px;
+  padding: 80px;
+  background-color: #6CB2C1;
+  border-radius: 40px;
+  align-items: center;
+  margin-top: 120px;
+  font-family: Poppins;
+  color: white;
+  font-weight: 900;
+  font-size: 30px;
+  margin-left: 20px;
+
+}
+
+.coluna-login-r2 {
+  padding: 80px;
+  height: 250px;
+  background-color:white;
+  margin-top: 50px;
+  font-family: Poppins;
+  font-weight: 900;
+  width: 416px;
+  font-size: 20px;
+  height: 148px;
+  color: #848C8E;
+}
+
+.bt-cadastro{
+  margin-top: 50px;
+}
+.coluna-login-2 {
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  margin-left: 80px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+height: 500px;
+justify-items: center;
+width: 100%;
+
+}
+
+.button-login {
+  background-color:#6CB2C1 ;
+  color: white;
+  margin-top:20px ;
+  justify-self: end;
+  margin-top: 80px;
+  }
+
+  
+   .formulario-container{ 
+justify-self: center;
+background-color:#6CB2C1 ;
+width: 60%;
+margin-top: 60px;
+padding: 60px;
+border-radius: 60px;
+font-family: Poppins;
+box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+   .select-categoria{ 
+background-color: white;
+margin-left: 20px;
+height: 30px;
+margin-bottom: 20px;
+border-radius: 05px;
+
+
+   }
+   .select-categoria2{ 
+    margin-left: 20px;
+    height: 30px;
+    margin-bottom: 20px;
+    font-size: larger;
+    border-radius: 05px;
+
+       }
+
+       .bt-add{
+  background-color: white;
+  font-family: Poppins;
+padding: 10px;
+border-radius: 20px;
+       }
+
+       .Tabela-historico {
+        background-color: white;
+        margin-top: 30px;
+        padding: 10px;
+       }
+.colunas-tabela{
+  padding: 20px;
+}
+
+.conteudo-linhas {
+  padding: 20px;
+margin-left: 5px;
+}
+
+.h2-tabela {
+  color: white;
+  margin-top: 10px;
+}
+.h1-tabela {
+  color: white;
+  margin-top: 20px;
+}
+
+.Grafico{ 
+  margin-top: 50px;
+  width: 1000px;
+  align-self: center;
+}
