@@ -2,7 +2,6 @@ import React from "react";
 import { Chart } from "react-google-charts";
 import Header from '../components/header';
 import Footer from '../components/footer';
-import Barchat from '../components/barchat';
 import Tabela from "../components/tabela";
 import Formulario from "../components/formulario";
 import TabelaDeValores from "../components/tabeladevalores";

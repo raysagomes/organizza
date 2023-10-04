@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getDatabase, ref, onValue } from "firebase/database";
-import { auth } from '../pages/Firebase';
+import { auth } from '../firebase/Firebase';
 
 function TabelaDeValores() {
     const db = getDatabase();

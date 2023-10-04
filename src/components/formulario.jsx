@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { getDatabase, ref, set, runTransaction, onValue, get } from "firebase/database";
-import { auth } from '../pages/Firebase';
+import { auth } from '../firebase/Firebase';
 import Grafico from './graph';
 
 function FormularioAdd() {

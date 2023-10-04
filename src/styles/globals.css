@@ -28,6 +28,8 @@ body {
 
 .header1{
   background-color:  #19375D;
+  width: 100%;
+
 }
 
 .botoes {
@@ -51,17 +53,18 @@ background-color: white;
   margin-top: 30px;
   background-color: #19375D;
   border-radius:40px;
-  width: 100%;
 
 }
 
 #celular{
 margin: 30px;
-height: 300px;
-margin-left: 80px;
-width:300px;
+height: 400px;
+width:450px;
 }
-
+.card-principal{
+  width: auto;
+  margin-top: 100px;
+}
 .card1 {
   padding-top: 10px;
 width: 50%;  
@@ -89,13 +92,12 @@ width: 50%;
 
 
 .Lista-itens{
- margin-right: 40px;
  margin-bottom: 30px;
+ margin-inline-end: 5px;
  border-radius: 20px;
  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
- width: 411px;
  height: 87px; 
- 
+ width: 400px;
 font-size: larger;
 }
 
@@ -170,10 +172,9 @@ margin-left: 20px;
   padding: 80px;
   height: 250px;
   background-color:white;
-  margin-top: 50px;
+  margin-top: 250px;
   font-family: Poppins;
   font-weight: 900;
-  width: 416px;
   font-size: 20px;
   height: 148px;
   color: #848C8E;
@@ -193,12 +194,12 @@ margin-left: 20px;
 
 .inputLogin{ 
   height: 40px;
-  width: 500px;
+  width: auto;
 }
 
 .inputPass{
   height: 40px;
-  width: 500px;
+  width: auto;
 }
 
 .divPai {
@@ -215,25 +216,40 @@ justify-self: end;
 .button-login2{
   background-color:#6CB2C1 ;
 color: white;
-margin-top:100px ;
-justify-self: end;
+margin-top: 20px;
+justify-self:flex-end;
 }
 
 .coluna-login-r1{
-  height: 200px;
-  padding: 80px;
-  background-color: #6CB2C1;
+  padding: 40px;
   border-radius: 40px;
   align-items: center;
-  margin-top: 120px;
+  margin-top: 200px;
   font-family: Poppins;
-  color: white;
+  color: black;
   font-weight: 900;
   font-size: 30px;
   margin-left: 20px;
+  margin-right: 40px;
 
 }
 
+.h1-cadastro{ 
+  margin-top: 100px;
+  background-color:#6CB2C1 ;
+  color: white;
+  padding: 40px;
+  border-radius: 40px;
+}
+
+.h1-login1 {
+  margin-top: 80px;
+  background-color:#6CB2C1 ;
+  color: white;
+  padding: 40px;
+  border-radius: 40px;
+  margin-right: 60px;
+}
 .coluna-login-r2 {
   padding: 80px;
   height: 250px;
@@ -241,14 +257,19 @@ justify-self: end;
   margin-top: 50px;
   font-family: Poppins;
   font-weight: 900;
-  width: 416px;
   font-size: 20px;
   height: 148px;
   color: #848C8E;
+  margin-right: 30px;
+  margin-left: 30px;
 }
-
+.p-login{
+  width: 80%;
+  justify-self: center;
+}
 .bt-cadastro{
   margin-top: 50px;
+  margin-bottom: 100px;
 }
 .coluna-login-2 {
   justify-content: center;
@@ -259,22 +280,26 @@ justify-self: end;
 height: 500px;
 justify-items: center;
 width: 100%;
-
 }
+
 
 .button-login {
   background-color:#6CB2C1 ;
   color: white;
-  margin-top:20px ;
   justify-self: end;
-  margin-top: 80px;
+  
   }
-
+  .button-login2 {
+    background-color:#6CB2C1 ;
+    color: white;
+    justify-self: end;
+    margin-bottom: 200px;
+    }
+  
   
    .formulario-container{ 
 justify-self: center;
 background-color:#6CB2C1 ;
-width: 60%;
 margin-top: 60px;
 padding: 60px;
 border-radius: 60px;
@@ -331,15 +356,69 @@ margin-left: 5px;
 }
 
 .Grafico{ 
-  margin-top: 80px;
-  width: 1000px;
+  margin-top: 120px;
+  width: 800px;
   align-self: center;
-  margin-bottom: 80px;
+  margin-bottom: 120px;
 }
 
 .p-tabela{
   margin-top: 20px;
 font-size: large;
 color:white;
-
 }
+
+.form-investimentos{
+justify-content: center;
+  width: 600px;
+  background-color: #6CB2C1;
+}
+
+.h1-form-investimento{
+  font-family: Poppins;
+  font-weight: 500;
+  margin-top: 80px;
+}
+
+.Tabela-investimento {
+  background-color: white;
+  margin-top: 30px;
+  border: 1px solid black;
+ }
+
+ .input-tabela-investimento{
+font-size:large;
+font-weight: 550;
+margin-top: 20px;
+ }
+
+ .input-tabela-investimento2{
+  font-size:large;
+  font-weight: 550;
+  margin-top: 20px;
+  border: 1px solid black;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 20px;
+   }
+
+   .bt-investimento{ 
+    margin-top: 40px;
+    background-color: #6CB2C1;
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid  #19375D;
+    color: white;
+   }
+
+   .rounded-t-5 {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+  
+  @media (max-width: 550px) {
+    .rounded-tr-lg-0 {
+      border-top-right-radius: 0.5rem;
+      border-bottom-left-radius: 0rem;
+    }
+  }

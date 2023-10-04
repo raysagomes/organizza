@@ -7,8 +7,7 @@ import H1 from '../components/h1'
 import Footer from '../components/footer'
 import Carteira from './carteira';
 import { useEffect, useState } from 'react';
-import { auth } from './Firebase';
-import { IncomeExpenseProvider } from "../components/IncomeExpenseContext"; // Importe o seu provedor de contexto
+import { auth } from '../firebase/Firebase';
 
 
 

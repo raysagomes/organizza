@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { getDatabase, ref, set } from "firebase/database";
-import { auth } from '../pages/Firebase';
+import { auth } from '../firebase/Firebase';
 
 function Tabela() {
     const db = getDatabase();

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getDatabase, ref, set, runTransaction, onValue } from "firebase/database";
-import { auth } from '../pages/Firebase';
+import { auth } from '../firebase/Firebase';
 import Grafico from './graph';
 import Chart from "chart.js/auto";
 
@@ -161,7 +161,7 @@ function FormularioAdd() {
                     <label className="select-categoria2">
                         Data:
                         <input
-                            type="text"
+                            type="date"
                             value={data}
                             onChange={(e) => setData(e.target.value)}
                             className="select-categoria"
@@ -208,7 +208,6 @@ function FormularioAdd() {
                     valorTotalRendimentos={valorTotalRendimentos}
                     valorTotal={valorTotal}
                 />
-                      <canvas className='my-4 w-100' id="myChart" width="900" height="380"></canvas>
 
             </div>
         </center>

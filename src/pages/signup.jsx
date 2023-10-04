@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRef } from 'react'
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from './Firebase';
+import { auth } from '../firebase/Firebase';
 import  {Button, Container, Row, Col}  from "react-bootstrap";
 import { Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -28,7 +28,7 @@ const password = passwordRef.current.value;
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    alert(errorMessage)
+    alert("Dados já cadastrados, Insira outros!")
     // ..
   });
 }
@@ -42,13 +42,12 @@ const estiloDoBotao = {
   return (
 <>
 
-<Container className='coluna-login-2'>
-    <Row>
-      <div className='div-login-2 d-flex'>
-        <Col className='coluna-login-r1 flex-grow-1' sm={2}>
-          Já tem uma conta? Seja bem vindo de volta!
+<div className='container text-center coluna-login-2'>
+    <Row className='row justify-content-center'>
+        <Col className='coluna-login-r1 col' >
+          <h1 className='h1-cadastro'>Já tem uma conta? Seja bem vindo de volta!</h1>
           <Link href="./Login">
-      <Button className='button-login2' style={estiloDoBotao}>Login</Button>{' '}   </Link>
+      <Button className='btn button-login2' style={estiloDoBotao}>Login</Button>{' '}   </Link>
         </Col>
 
         <Col className='coluna-login-r2 flex-grow-3' sm={6}>
@@ -75,11 +74,11 @@ const estiloDoBotao = {
 <Button type='submit' className='bt-cadastro' style={estiloDoBotao} > Cadastrar </Button>
 </Form>
 </Col>
+</Row>
 </div>                    
-  </Row>
+  
 
 
-  </Container> 
 </>
 )
 };

@@ -10,7 +10,7 @@ import { initializeApp } from "firebase/app";
 export default function Home() {
   return (
     <>
-    <Signup />
+    < Signup/>
     </>
   )
 }
