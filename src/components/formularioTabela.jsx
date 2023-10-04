@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getDatabase, ref, set, runTransaction, onValue } from "firebase/database";
 import { auth } from '../pages/Firebase';
 import Grafico from './graph';
+import Chart from "chart.js/auto";
 
 function FormularioAdd() {
     const [tipo, setTipo] = useState("expense");
@@ -111,9 +112,13 @@ function FormularioAdd() {
         }
     };
 
+
+
+
+
     return (
         <center>
-            <div className="formulario-container">
+            <div className="formulario-container container">
                 <form onSubmit={handleSubmit}>
                     <label className="select-categoria2">
                         Tipo:
@@ -197,12 +202,14 @@ function FormularioAdd() {
                     <p className="p-tabela">Total: {valorTotal}</p>
                 </div>
             </div>
-            <div className="Grafico">
+            <div className="Grafico container">
                 <Grafico
                     valorTotalDespesas={valorTotalDespesas}
                     valorTotalRendimentos={valorTotalRendimentos}
                     valorTotal={valorTotal}
                 />
+                      <canvas className='my-4 w-100' id="myChart" width="900" height="380"></canvas>
+
             </div>
         </center>
     );

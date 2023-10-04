@@ -4,21 +4,18 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
 import React from 'react';
-import { useIncomeExpense } from './IncomeExpenseContext';
 
 
 function Container1() {
     return (
-      <Container className='container-main'>
-        <Row>
-          <Col>       <Image id="celular" src="/celular.png" alt="Celular" />       </Col>
+      <Container className='container container-main'>
+        <Row className='row justify-content-center'>
+          <Col className='col'>       <Image id="celular" src="/celular.png" alt="Celular" />       </Col>
 
-          <Col >
-          <div className='div-card'> 
-          <Card style={{ width: '500px' }}>
+          <Col  className='col'>
+          <Card className='card card-principal'>
       <Card.Body className='Card1' >
         <Card.Title>     Bom dia,</Card.Title>
         <Card.Subtitle className="mb-2 text-muted"> User,</Card.Subtitle>
@@ -28,9 +25,6 @@ function Container1() {
         </Card.Text>
         </Card.Body >
     </Card>
-</div>
-
-      
     </Col>
         </Row>
     
