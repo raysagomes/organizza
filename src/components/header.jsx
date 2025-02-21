@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Header() {
   const router = useRouter();
-  const auth = getAuth(); // Movemos a obtenção da autenticação para fora das funções.
+  const auth = getAuth(); 
 
   const handleLogout = () => {
     signOut(auth)
@@ -19,7 +19,7 @@ function Header() {
   };
 
   const handleCadastro = () => {
-    router.push('/signup'); // Redireciona para a página de cadastro após o login bem-sucedido.
+    router.push('/signup'); 
   };
 
   return (
