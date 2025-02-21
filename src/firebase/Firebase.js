@@ -9,13 +9,13 @@ require('firebase/firestore');
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBYtd65V1OEd1zbvEtUw68_LQc1SuYsfoY",
+  apiKey: "",
   authDomain: "organiza-ccdb9.firebaseapp.com",
-  projectId: "organiza-ccdb9",
-  storageBucket: "organiza-ccdb9.appspot.com",
-  messagingSenderId: "50251489559",
-  appId: "1:50251489559:web:3db77066505108dbbd1752",
-  measurementId: "G-XD9XDHB81L"
+  projectId: "organiza",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: ""
 
   
 };
